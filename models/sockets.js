@@ -16,10 +16,10 @@ class Sockets {
         // On connection
         this.io.on('connection', ( socket ) => {
 
-            // TODO marcadores activos al darse conexion
+            // marcadores activos
             socket.emit('marcadores-activos', this.marcadores.activos );
 
-            //TODO MARCADOR NUEVO
+            //nuevo marcador
             socket.on('marcador-nuevo', ( marcador ) => {
                 this.marcadores.agregarMarcador( marcador );
 
@@ -27,6 +27,7 @@ class Sockets {
             });
 
             //MARCADOR ACTUALIZADO
+            
         
         });
     }
