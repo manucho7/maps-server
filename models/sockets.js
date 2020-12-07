@@ -27,7 +27,11 @@ class Sockets {
             });
 
             //MARCADOR ACTUALIZADO
-            
+            socket.on('marcador-actualizado', ( marcador ) => {
+                this.marcadores.actualizarMarcador(marcador);
+
+                socket.broadcast.emit('marcador-actualizado', marcador );
+            });
         
         });
     }
